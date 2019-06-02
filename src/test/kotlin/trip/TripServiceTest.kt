@@ -62,6 +62,10 @@ class TripServiceTest {
         override fun getLoggetInUser(): User? {
             return loggedInUser
         }
+
+        override fun tripsBy(user: User): List<Trip> {
+            return user.trips
+        }
     }
 
     class Constants {

@@ -27,7 +27,7 @@ open class TripService {
         }
     }
 
-    protected fun tripsBy(user: User) = TripDAO.findTripsByUser(user)
+    protected open fun tripsBy(user: User) = TripDAO.findTripsByUser(user)
 
     protected open fun getLoggetInUser() = UserSession.instance.loggedUser
 
