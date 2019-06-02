@@ -17,9 +17,15 @@ class TripServiceTest {
 
     @Test
     fun should_throw_user_not_logged_exception_when_user_is_not_logged_in() {
-        val tripService = TripService()
+        val tripService = TestableTripService()
         Assertions.assertThrows(UserNotLoggedInException::class.java) {
             tripService.getTripsByUser(User())
+        }
+    }
+
+    private class TestableTripService : TripService() {
+        override fun getLoggetInUser(): User? {
+            return null
         }
     }
 }
