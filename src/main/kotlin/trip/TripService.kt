@@ -5,11 +5,11 @@ import org.craftedsw.tripservicekata.user.UserSession
 import org.tripservicekata.exception.UserNotLoggedInException
 import java.util.*
 
-class TripService {
+open class TripService {
 
     fun getTripsByUser(user: User): List<Trip> {
         var tripList: List<Trip> = ArrayList<Trip>()
-        val loggedUser: User? = UserSession.instance.loggedUser
+        val loggedUser: User? = getLoggetInUser()
         var isFriend: Boolean = false
         if (loggedUser != null) {
             for (friend in user.friends) {
@@ -26,5 +26,7 @@ class TripService {
             throw UserNotLoggedInException()
         }
     }
+
+    protected open fun getLoggetInUser() = UserSession.instance.loggedUser
 
 }
