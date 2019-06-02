@@ -71,7 +71,6 @@ class TripServiceTest {
     class Constants {
         companion object {
             val GUEST = null
-            val UNUSED_USER = null
             val REGISTERED_USER = User()
             val ANOTHER_USER = User()
             val TO_BARCELONA = Trip()
