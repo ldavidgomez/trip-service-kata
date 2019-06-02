@@ -1,4 +1,4 @@
-package org.craftedsw.tripservicekata
+package org.tripservicekata
 
 import org.tripservicekata.exception.UserNotLoggedInException
 import org.tripservicekata.trip.Trip
